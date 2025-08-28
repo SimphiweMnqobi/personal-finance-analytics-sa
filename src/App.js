@@ -570,16 +570,6 @@ function App() {
               <Tooltip formatter={(value) => formatZAR(value)} />
             </PieChart>
           </ResponsiveContainer>
-          
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={data.categoryData} layout="horizontal">
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" tickFormatter={(value) => `R${(value/1000).toFixed(0)}k`} />
-              <YAxis dataKey="category" type="category" width={100} />
-              <Tooltip formatter={(value) => formatZAR(value)} />
-              <Bar dataKey="spent" fill="#3B82F6" />
-            </BarChart>
-          </ResponsiveContainer>
         </div>
       </div>
 
