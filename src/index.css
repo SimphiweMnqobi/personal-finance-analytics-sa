@@ -75,7 +75,64 @@ textarea:focus {
   outline-offset: 2px;
 }
 
-/* Charts Container */
+/* App Container */
+.App {
+  text-align: center;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  background-color: white;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 2rem;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.tab.active {
+  background-color: #0066CC;
+  color: white;
+  border-bottom: 3px solid #004499;
+}
+
+/* Tab Content */
+.tab-content {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Chart Container */
+.chart-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Categories Charts Container - CENTERING THE PIE CHART */
 .categories-charts {
   display: flex;
   justify-content: center;
@@ -96,7 +153,7 @@ textarea:focus {
 .full-width-chart h3 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #e1e5e9;
+  color: #374151;
 }
 
 /* Pie Chart Centering */
@@ -106,4 +163,23 @@ textarea:focus {
 
 .recharts-surface {
   margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+  }
+  
+  .tab {
+    padding: 0.75rem 1rem;
+  }
+  
+  .tab-content {
+    padding: 1rem;
+  }
+  
+  .full-width-chart {
+    max-width: 100%;
+  }
 }
