@@ -1,3 +1,5 @@
+/* Dark Mode Personal Finance Analytics - South Africa */
+
 /* Global CSS Reset and Base Styles */
 * {
   box-sizing: border-box;
@@ -10,67 +12,418 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f9fafb;
+  background-color: #0f1419;
+  color: #e5e7eb;
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Dark Mode Color Variables */
+:root {
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f2e;
+  --bg-card: #252b3b;
+  --bg-hover: #2d3748;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --border-color: #374151;
+  --accent-blue: #3b82f6;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-purple: #8b5cf6;
+  --accent-yellow: #f59e0b;
+  --shadow: rgba(0, 0, 0, 0.5);
 }
 
-/* Utility classes for South African theme */
-.text-sa-blue {
-  color: #0066CC;
+/* Override Tailwind-like classes for dark mode */
+.min-h-screen {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
 }
 
-.bg-sa-blue {
-  background-color: #0066CC;
+.bg-gray-50 {
+  background-color: var(--bg-primary) !important;
 }
 
-.text-sa-green {
-  color: #00AA44;
+.bg-white {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px var(--shadow), 0 2px 4px -1px var(--shadow);
 }
 
-.bg-sa-green {
-  background-color: #00AA44;
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 var(--shadow);
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.text-sa-orange {
-  color: #FF6B35;
+.shadow-md {
+  box-shadow: 0 4px 6px -1px var(--shadow), 0 2px 4px -1px var(--shadow);
 }
 
-.bg-sa-orange {
-  background-color: #FF6B35;
+/* Text Colors */
+.text-gray-900 {
+  color: var(--text-primary) !important;
 }
 
-/* Custom scrollbar */
+.text-gray-800 {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-700 {
+  color: var(--text-secondary) !important;
+}
+
+.text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+.text-gray-500 {
+  color: var(--text-muted) !important;
+}
+
+.text-gray-400 {
+  color: var(--text-muted) !important;
+}
+
+/* Button Styles */
+.bg-blue-600 {
+  background-color: var(--accent-blue) !important;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: #2563eb !important;
+}
+
+.bg-green-600 {
+  background-color: var(--accent-green) !important;
+}
+
+.hover\:bg-green-700:hover {
+  background-color: #059669 !important;
+}
+
+.bg-gray-600 {
+  background-color: #4b5563 !important;
+}
+
+.hover\:bg-gray-700:hover {
+  background-color: #374151 !important;
+}
+
+.bg-gray-200 {
+  background-color: var(--bg-hover) !important;
+  color: var(--text-secondary) !important;
+}
+
+.hover\:bg-gray-300:hover {
+  background-color: #475569 !important;
+}
+
+/* Card Enhancements */
+.rounded-lg {
+  border-radius: 0.75rem;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(37, 43, 59, 0.8) 100%);
+}
+
+/* Table Styles */
+.bg-gray-50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.border-t {
+  border-top: 1px solid var(--border-color) !important;
+}
+
+table {
+  color: var(--text-primary);
+}
+
+th {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-secondary) !important;
+}
+
+td {
+  border-color: var(--border-color) !important;
+}
+
+/* Alert and Status Colors */
+.text-green-600 {
+  color: #10b981 !important;
+}
+
+.text-red-600 {
+  color: #ef4444 !important;
+}
+
+.text-blue-600 {
+  color: var(--accent-blue) !important;
+}
+
+.text-purple-600 {
+  color: var(--accent-purple) !important;
+}
+
+.text-yellow-600 {
+  color: var(--accent-yellow) !important;
+}
+
+.text-green-700 {
+  color: #059669 !important;
+}
+
+.text-yellow-700 {
+  color: #d97706 !important;
+}
+
+.text-red-700 {
+  color: #dc2626 !important;
+}
+
+.text-green-800 {
+  color: #065f46 !important;
+}
+
+.text-red-800 {
+  color: #991b1b !important;
+}
+
+.text-blue-800 {
+  color: #1e40af !important;
+}
+
+.text-blue-900 {
+  color: #1e3a8a !important;
+}
+
+/* Status Badges */
+.bg-green-100 {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  color: #10b981 !important;
+}
+
+.bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  color: #ef4444 !important;
+}
+
+.bg-blue-50 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+.bg-red-50 {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Form Elements */
+input[type="file"] {
+  color: var(--text-primary);
+}
+
+.border-dashed {
+  border-color: var(--border-color) !important;
+  background-color: rgba(37, 43, 59, 0.5) !important;
+}
+
+label[for="csv-upload"] {
+  transition: all 0.3s ease;
+}
+
+label[for="csv-upload"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Chart Container Enhancements */
+.recharts-wrapper {
+  background-color: transparent !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--border-color) !important;
+  opacity: 0.5;
+}
+
+.recharts-text {
+  fill: var(--text-secondary) !important;
+}
+
+.recharts-legend-wrapper {
+  color: var(--text-primary) !important;
+}
+
+.recharts-default-legend .recharts-legend-item-text {
+  color: var(--text-primary) !important;
+}
+
+/* Tooltip Styling */
+.recharts-default-tooltip {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px var(--shadow) !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--text-primary) !important;
+}
+
+.recharts-tooltip-item {
+  color: var(--text-primary) !important;
+}
+
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--bg-secondary);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--border-color);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #4b5563;
 }
 
-/* Smooth transitions for better UX */
-* {
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+/* Loading Spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/* Focus styles for accessibility */
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid #0066CC;
-  outline-offset: 2px;
+.spinner {
+  border: 2px solid var(--border-color);
+  border-top: 2px solid var(--accent-blue);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+/* Hover Effects and Animations */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px var(--shadow);
+}
+
+/* Tab Button Active State Enhancement */
+button[class*="bg-blue-600"] {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, #2563eb 100%) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Metric Cards Glow Effect */
+.bg-white:has(.text-green-600) {
+  border-left: 4px solid var(--accent-green);
+}
+
+.bg-white:has(.text-red-600) {
+  border-left: 4px solid var(--accent-red);
+}
+
+.bg-white:has(.text-blue-600) {
+  border-left: 4px solid var(--accent-blue);
+}
+
+.bg-white:has(.text-purple-600) {
+  border-left: 4px solid var(--accent-purple);
+}
+
+/* South African Flag Colors Accent */
+.sa-flag-accent {
+  background: linear-gradient(135deg, 
+    #007749 0%,    /* Green */
+    #ffb612 25%,   /* Yellow */
+    #de3831 50%,   /* Red */
+    #002395 75%,   /* Blue */
+    #000000 100%   /* Black */
+  );
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+/* Add SA flag accent to header */
+.bg-white.shadow-sm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    #007749 0%,
+    #ffb612 25%,
+    #de3831 50%,
+    #002395 75%,
+    #000000 100%
+  );
+}
+
+/* Add relative positioning to header */
+.bg-white.shadow-sm {
+  position: relative;
+}
+
+/* Enhanced Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Glassmorphism Effect for Cards */
+@supports (backdrop-filter: blur(10px)) {
+  .bg-white {
+    background: rgba(37, 43, 59, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  .overflow-x-auto {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+  }
+  
+  .grid.grid-cols-1.md\\:grid-cols-4.gap-6 {
+    gap: 1rem;
+  }
+  
+  .px-4.sm\\:px-6.lg\\:px-8 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .bg-gray-50,
+  .bg-white {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .text-gray-900,
+  .text-gray-800,
+  .text-gray-700,
+  .text-gray-600 {
+    color: black !important;
+  }
 }
